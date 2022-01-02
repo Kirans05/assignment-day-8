@@ -1,0 +1,324 @@
+1).  (a).  Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+
+
+class movie{
+    constructor(title,studio,ratings){
+        this.title=title;
+        this.studio=studio;
+        this.ratings=ratings
+    }
+    
+}
+
+let film=new movie("KGF","Hombale Films","8.3")
+console.log(film.title)
+console.log(film.studio)
+console.log(film.ratings)
+
+
+
+output
+KGF
+kiran.js:1310 Hombale Films
+kiran.js:1311 8.3
+
+
+
+
+
+1).  (b).  The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+
+
+
+class movie{
+    constructor(title,studio,ratings="PG"){
+        this.title=title;
+        this.studio=studio;
+        this.ratings=ratings
+    }
+
+}
+
+let film=new movie("KGF","Hombale Films")
+console.log(film.title)
+console.log(film.studio)
+console.log(film.ratings)
+
+output
+
+KGF
+kiran.js:1310 Hombale Films
+kiran.js:1311 PG
+
+
+
+1).  (c).  Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+
+class movie{
+    getPG(film){
+        let array=[]
+        for(let i of film){            
+            if(i.ratings=="PG"){
+                array.push(i)
+            }
+        }
+    
+         console.log(array)
+    }
+}
+
+let films= new movie()
+let filmlist=[
+    {
+        "title":"rajakumara",
+        "studio":"hombale films",
+        "ratings":"PG"
+    },
+    {
+        "title":"kgf",
+        "studio":"hombale films",
+        "ratings":"PG"
+    },
+    {
+        "title":"yuvaratna",
+        "studio":"rockline films",
+        "ratings":"R"
+    },
+    {
+        "title":"Robert",
+        "studio":"jayana combines",
+        "ratings":"R"    
+    },
+    {
+        "title":"googly",
+        "studio":"jayana combines",
+        "ratings":"PG13"
+    }
+]
+films.getPG(filmlist)
+
+
+
+output
+0:
+ratings: "PG"
+studio: "hombale films"
+title: "rajakumara"
+[[Prototype]]: Object
+
+1:
+ratings: "PG"
+studio: "hombale films"
+title: "kgf"
+[[Prototype]]: Object
+length: 2
+[[Prototype]]: Array(0)
+
+
+
+
+
+1).  (d).  Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+
+class movie{
+    constructor(title,studio,ratings){
+        this.title=title;
+        this.studio=studio;
+        this.ratings=ratings
+    }
+
+}
+
+let film=new movie("Casino Royale","Eon Productions","PG­13")
+console.log(film.title)
+console.log(film.studio)
+console.log(film.ratings)
+
+
+output
+
+Casino Royale
+kiran.js:1310 Eon Productions
+kiran.js:1311 PG­13
+
+
+
+2).  problem on circle 
+
+(a).  placing the properties as radius and color in the ans object.
+
+
+
+class circle{
+    constructor(radius,color){
+        this.radius=radius;
+        this.color=color;
+    }
+}
+
+let ans = new circle(1.0,"red")
+
+
+
+(b). usibg the setter and getter methods 
+
+
+
+class circle{
+    setter(radius,color){
+        this.radius=radius.toFixed(1);
+        this.color=color
+    }
+    getter(){
+        return `${this.radius} ${this.color}`
+    }
+}
+let ans = new circle()
+ans.setter(1.0,"red")
+console.log(ans.getter())
+
+
+output
+
+1.0 red
+
+
+
+(c).  printing output in the form of string
+
+class circle{
+    constructor(radius,color){
+        this.radius=radius.toFixed(1);
+        this.color=color;
+    }
+    getans(){
+        let a=[this.radius,this.color]
+        return a.toString()
+    }
+}
+
+let ans = new circle(1.0,"red")
+console.log(ans.getans())
+
+
+
+output
+1.0,red
+
+
+(d).  calculating the area of the circle
+
+
+
+class circle{
+    constructor(radius,color){
+        this.radius=radius;
+        this.color=color;
+    }
+    getarea(){
+        let ans
+        ans=3.14*(this.radius**2)
+        return ans
+    }
+    getcircumference(){
+        let ans
+        ans=2*3.14*this.radius
+        return ans
+    }
+}
+
+let ans = new circle(1.0,"red")
+console.log(ans.getarea())
+
+
+output
+3.14
+
+
+(e).  calculating the circumference of the rcle
+
+class circle{
+    constructor(radius,color){
+        this.radius=radius;
+        this.color=color;
+    }
+    getarea(){
+        let ans
+        ans=3.14*(this.radius**2)
+        return ans
+    }
+    getcircumference(){
+        let ans
+        ans=2*3.14*this.radius
+        return ans
+    }
+}
+
+let ans = new circle(1.0,"red")
+console.log(ans.getcircumference())
+
+
+output
+6.28
+
+
+3).   Write a “person” class to hold all the details.
+
+class Person {
+    constructor(firtsname,initial,age,gender,city,language,degree,branch){
+        this.firtsname = firtsname;
+        this.initial = initial;
+        this.age = age;
+        this.gender= gender;
+        this.city = city;
+        this.language = language
+	this.degree=degree
+	this.branch=branch
+    }
+    getdata(){
+        return `${this.firtsname} ${this.initial} ${this.age} ${this.gender} ${this.city} ${this.language} ${this.degree} ${this.branch}`
+    }
+}
+
+let object = new Person("kiran","s",23,"male","bangalore","kannada","BE","Mechanical engineering")
+console.log(object.getdata())
+
+
+output
+
+kiran s 23 male bangalore kannada BE Mechanical engineering
+
+
+
+
+4).   write a class to calculate uber price.
+
+
+
+
+class uber {
+    constructor(KM){
+        this.km = KM
+    }
+    getprice(){
+        let tollcharges=20
+        let GST=9
+        let value=10
+        value=(value*this.km)+tollcharges+GST
+        
+        return `${value}`
+    }
+}
+
+let uberprice = new uber(10)
+console.log(uberprice.getprice())
+
+
+
+output
+
+129
